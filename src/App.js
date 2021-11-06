@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Form from './components/Form';
+import Card from './components/Card';
 
 class App extends React.Component {
   constructor() {
@@ -47,6 +48,16 @@ class App extends React.Component {
           isSaveButtonDisabled={ state.saveButtonDisabled }
           onInputChange={ handleChange }
           onSaveButtonClick={ handleClick }
+        />
+        <Card
+          cardName={ state.name }
+          cardDescription={ state.description }
+          cardAttr1={ state.firstAtribute }
+          cardAttr2={ state.secondAtribute }
+          cardAttr3={ state.thirdAtribute }
+          cardImage={ state.imgSrc }
+          cardRare={ state.rarity }
+          cardTrunfo={ state.trunfo }
         />
       </div>
     );
