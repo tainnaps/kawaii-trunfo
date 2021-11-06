@@ -13,7 +13,7 @@ class App extends React.Component {
       secondAtribute: '',
       thirdAtribute: '',
       imgSrc: '',
-      rarity: '',
+      rarity: 'normal',
       trunfo: false,
       saveButtonDisabled: true,
     };
