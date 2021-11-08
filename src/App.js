@@ -57,7 +57,7 @@ class App extends React.Component {
     event.preventDefault();
 
     const { name, description, attr1, attr2, attr3,
-      image, rarity, trunfo, savedCards } = this.state;
+      image, rarity, trunfo, hasTrunfo, savedCards } = this.state;
 
     const newCard = { name, description, attr1, attr2, attr3, image, rarity, trunfo };
 
@@ -72,6 +72,7 @@ class App extends React.Component {
         attr3: '0',
         rarity: 'normal',
         hasTrunfo: trunfo !== false,
+        trunfo: hasTrunfo !== false, // remove a frase "Super Trunfo" do preview após a carta Super Trunfo ter sido criada.
       }
     ));
   }
@@ -81,30 +82,53 @@ class App extends React.Component {
     return (
       <>
         <h1>Tryunfo</h1>
-        <Form
-          cardName={ state.name }
-          cardDescription={ state.description }
-          cardAttr1={ state.attr1 }
-          cardAttr2={ state.attr2 }
-          cardAttr3={ state.attr3 }
-          cardImage={ state.image }
-          cardRare={ state.rarity }
-          cardTrunfo={ state.trunfo }
-          hasTrunfo={ state.hasTrunfo }
-          isSaveButtonDisabled={ state.isSaveButtonDisabled }
-          onInputChange={ handleChange }
-          onSaveButtonClick={ handleClick }
-        />
-        <Card
-          cardName={ state.name }
-          cardDescription={ state.description }
-          cardAttr1={ state.attr1 }
-          cardAttr2={ state.attr2 }
-          cardAttr3={ state.attr3 }
-          cardImage={ state.image }
-          cardRare={ state.rarity }
-          cardTrunfo={ state.trunfo }
-        />
+        <section className="add-card-form">
+          <h1>Adicionar nova carta</h1>
+          <Form
+            cardName={ state.name }
+            cardDescription={ state.description }
+            cardAttr1={ state.attr1 }
+            cardAttr2={ state.attr2 }
+            cardAttr3={ state.attr3 }
+            cardImage={ state.image }
+            cardRare={ state.rarity }
+            cardTrunfo={ state.trunfo }
+            hasTrunfo={ state.hasTrunfo }
+            isSaveButtonDisabled={ state.isSaveButtonDisabled }
+            onInputChange={ handleChange }
+            onSaveButtonClick={ handleClick }
+          />
+        </section>
+        <section className="card-preview">
+          <h1>Pré-visualização</h1>
+          <Card
+            cardName={ state.name }
+            cardDescription={ state.description }
+            cardAttr1={ state.attr1 }
+            cardAttr2={ state.attr2 }
+            cardAttr3={ state.attr3 }
+            cardImage={ state.image }
+            cardRare={ state.rarity }
+            cardTrunfo={ state.trunfo }
+          />
+        </section>
+        {state.savedCards.length !== 0 && (
+          <section>
+            <h1>Cartas Salvas</h1>
+            {state.savedCards.map((savedCard) => (
+              <Card
+                cardName={ savedCard.name }
+                cardDescription={ savedCard.description }
+                cardAttr1={ savedCard.attr1 }
+                cardAttr2={ savedCard.attr2 }
+                cardAttr3={ savedCard.attr3 }
+                cardImage={ savedCard.image }
+                cardRare={ savedCard.rarity }
+                cardTrunfo={ savedCard.trunfo }
+                key={ savedCard.name }
+              />
+            ))}
+          </section>)}
       </>
     );
   }
