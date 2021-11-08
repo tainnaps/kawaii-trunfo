@@ -30,44 +30,44 @@ class Form extends React.Component {
               onChange={ props.onInputChange }
             />
           </label>
-          <label htmlFor="firstAtribute">
+          <label htmlFor="attr1">
             1º atributo
             <input
-              id="firstAtribute"
-              name="firstAtribute"
+              id="attr1"
+              name="attr1"
               type="number"
               data-testid="attr1-input"
               value={ props.cardAttr1 }
               onChange={ props.onInputChange }
             />
           </label>
-          <label htmlFor="secondAtribute">
+          <label htmlFor="attr2">
             2º atributo
             <input
-              id="secondAtribute"
-              name="secondAtribute"
+              id="attr2"
+              name="attr2"
               type="number"
               data-testid="attr2-input"
               value={ props.cardAttr2 }
               onChange={ props.onInputChange }
             />
           </label>
-          <label htmlFor="thirdAtribute">
+          <label htmlFor="attr3">
             3º atributo
             <input
-              id="thirdAtribute"
-              name="thirdAtribute"
+              id="attr3"
+              name="attr3"
               type="number"
               data-testid="attr3-input"
               value={ props.cardAttr3 }
               onChange={ props.onInputChange }
             />
           </label>
-          <label htmlFor="imgSrc">
+          <label htmlFor="image">
             Imagem
             <input
-              id="imgSrc"
-              name="imgSrc"
+              id="image"
+              name="image"
               type="text"
               data-testid="image-input"
               value={ props.cardImage }
