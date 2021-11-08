@@ -16,6 +16,7 @@ class App extends React.Component {
       rarity: 'normal',
       trunfo: false,
       isSaveButtonDisabled: true,
+      savedCards: [],
     };
   }
 
@@ -26,6 +27,7 @@ class App extends React.Component {
     const parsedAttr3 = parseInt(attr3, 10);
     const maxSum = 210;
     const maxValue = 90;
+
     if ((parsedAttr1 + parsedAttr2 + parsedAttr3 <= maxSum)
       && (parsedAttr1 >= 0 && parsedAttr1 <= maxValue)
       && (parsedAttr2 >= 0 && parsedAttr2 <= maxValue)
@@ -50,8 +52,34 @@ class App extends React.Component {
     this.setState({ [target.name]: value }, () => this.validateSaveButton());
   }
 
-  handleClick = () => {
-    console.log('Form is saved!');
+  handleClick = (event) => {
+    event.preventDefault();
+
+    const { name, description, attr1, attr2, attr3,
+      image, rarity, trunfo, savedCards } = this.state;
+
+    const newCard = { name, description, attr1, attr2, attr3, image, rarity, trunfo };
+
+    this.setState((state) => (
+      {
+        savedCards: savedCards.length === 0 ? [newCard] : [...state.savedCards, newCard],
+        name: '',
+        description: '',
+        image: '',
+        attr1: '0',
+        attr2: '0',
+        attr3: '0',
+        rarity: 'normal',
+      }
+    ));
+
+    // if (savedCards.length === 0) {
+    //   this.setState({ savedCards: [newCard] });
+    // } else {
+    //   this.setState((previousState) => (
+    //     { savedCards: [...previousState.savedCards, newCard] }
+    //   ));
+    // }
   }
 
   render() {
