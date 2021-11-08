@@ -15,6 +15,7 @@ class App extends React.Component {
       image: '',
       rarity: 'normal',
       trunfo: false,
+      hasTrunfo: false,
       isSaveButtonDisabled: true,
       savedCards: [],
     };
@@ -47,7 +48,7 @@ class App extends React.Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     /*
     Utilizei a sugestão do Sugano, na thread abaixo, para que minha função de validação fosse executada com os dados do state atualizados.
-    ref: https://trybecourse.slack.com/archives/C02B4PPBERE/p1636386780255600
+    link: https://trybecourse.slack.com/archives/C02B4PPBERE/p1636386780255600
     */
     this.setState({ [target.name]: value }, () => this.validateSaveButton());
   }
@@ -70,16 +71,9 @@ class App extends React.Component {
         attr2: '0',
         attr3: '0',
         rarity: 'normal',
+        hasTrunfo: trunfo !== false,
       }
     ));
-
-    // if (savedCards.length === 0) {
-    //   this.setState({ savedCards: [newCard] });
-    // } else {
-    //   this.setState((previousState) => (
-    //     { savedCards: [...previousState.savedCards, newCard] }
-    //   ));
-    // }
   }
 
   render() {
@@ -96,7 +90,7 @@ class App extends React.Component {
           cardImage={ state.image }
           cardRare={ state.rarity }
           cardTrunfo={ state.trunfo }
-          hasTrunfo={ state.cardName }
+          hasTrunfo={ state.hasTrunfo }
           isSaveButtonDisabled={ state.isSaveButtonDisabled }
           onInputChange={ handleChange }
           onSaveButtonClick={ handleClick }
