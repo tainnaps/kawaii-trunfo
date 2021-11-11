@@ -53,7 +53,7 @@ class App extends React.Component {
     this.setState({ [target.name]: value }, () => this.validateSaveButton());
   }
 
-  handleClick = (event) => {
+  handleSaveButtonClick = (event) => {
     event.preventDefault();
 
     const { name, description, attr1, attr2, attr3,
@@ -61,9 +61,7 @@ class App extends React.Component {
 
     const newCard = { name, description, attr1, attr2, attr3, image, rarity, trunfo };
 
-    if (trunfo) {
-      this.setState({ trunfo: false, hasTrunfo: true });
-    }
+    if (trunfo) this.setState({ trunfo: false, hasTrunfo: true });
 
     this.setState((state) => (
       {
@@ -79,8 +77,26 @@ class App extends React.Component {
     ));
   }
 
+  handleDeleteButtonClick = ({ target }) => {
+    const { savedCards } = this.state;
+    const cardId = target.parentElement.id;
+    const card = savedCards.find(({ name }) => name === cardId);
+
+    if (card.trunfo) this.setState({ trunfo: false, hasTrunfo: false });
+
+    this.setState((state) => (
+      {
+        /*
+        Consultei o link abaixo para checar como remover um item de um array.
+        link: https://stackoverflow.com/questions/5767325/how-can-i-remove-a-specific-item-from-an-array
+        */
+        savedCards: state.savedCards.filter(({ name }) => name !== cardId),
+      }
+    ));
+  }
+
   render() {
-    const { state, handleChange, handleClick } = this;
+    const { state, handleChange, handleSaveButtonClick, handleDeleteButtonClick } = this;
     return (
       <>
         <h1>Tryunfo</h1>
@@ -98,7 +114,7 @@ class App extends React.Component {
             hasTrunfo={ state.hasTrunfo }
             isSaveButtonDisabled={ state.isSaveButtonDisabled }
             onInputChange={ handleChange }
-            onSaveButtonClick={ handleClick }
+            onSaveButtonClick={ handleSaveButtonClick }
           />
         </section>
         <section className="card-preview">
@@ -118,17 +134,25 @@ class App extends React.Component {
           <section>
             <h1>Cartas Salvas</h1>
             {state.savedCards.map((savedCard) => (
-              <Card
-                cardName={ savedCard.name }
-                cardDescription={ savedCard.description }
-                cardAttr1={ savedCard.attr1 }
-                cardAttr2={ savedCard.attr2 }
-                cardAttr3={ savedCard.attr3 }
-                cardImage={ savedCard.image }
-                cardRare={ savedCard.rarity }
-                cardTrunfo={ savedCard.trunfo }
-                key={ savedCard.name }
-              />
+              <div key={ savedCard.name } id={ savedCard.name }>
+                <Card
+                  cardName={ savedCard.name }
+                  cardDescription={ savedCard.description }
+                  cardAttr1={ savedCard.attr1 }
+                  cardAttr2={ savedCard.attr2 }
+                  cardAttr3={ savedCard.attr3 }
+                  cardImage={ savedCard.image }
+                  cardRare={ savedCard.rarity }
+                  cardTrunfo={ savedCard.trunfo }
+                />
+                <button
+                  type="button"
+                  data-testid="delete-button"
+                  onClick={ handleDeleteButtonClick }
+                >
+                  Excluir
+                </button>
+              </div>
             ))}
           </section>)}
       </>
