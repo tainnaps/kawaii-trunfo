@@ -57,9 +57,13 @@ class App extends React.Component {
     event.preventDefault();
 
     const { name, description, attr1, attr2, attr3,
-      image, rarity, trunfo, hasTrunfo, savedCards } = this.state;
+      image, rarity, trunfo, savedCards } = this.state;
 
     const newCard = { name, description, attr1, attr2, attr3, image, rarity, trunfo };
+
+    if (trunfo) {
+      this.setState({ trunfo: false, hasTrunfo: true });
+    }
 
     this.setState((state) => (
       {
@@ -71,8 +75,6 @@ class App extends React.Component {
         attr2: '0',
         attr3: '0',
         rarity: 'normal',
-        hasTrunfo: trunfo !== false,
-        trunfo: hasTrunfo !== false, // remove a frase "Super Trunfo" do preview após a carta Super Trunfo ter sido criada.
       }
     ));
   }
