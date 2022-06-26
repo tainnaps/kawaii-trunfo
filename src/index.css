@@ -58,9 +58,30 @@ code {
   width: 50%;
 }
 
+.saved-cards-section {
+  align-items: center;
+  gap: 7vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.saved-card {
+  gap: 3vh;
+  width: 270px;
+}
+
 .display-column {
   display: flex;
   flex-direction: column;
+}
+
+.saved-cards {
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8vh 4%;
+  justify-content: center;
+  width: 100%;
 }
 
 button {
