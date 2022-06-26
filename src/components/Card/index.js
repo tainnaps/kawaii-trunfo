@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+const DEFAULT_IMG = 'https://cdn.pixabay.com/photo/2016/12/18/13/44/download-1915749_960_720.png';
 
 class Card extends React.Component {
   render() {
@@ -7,7 +8,11 @@ class Card extends React.Component {
     return (
       <div className="card">
         <h3 data-testid="name-card">{ props.cardName }</h3>
-        <img src={ props.cardImage } alt={ props.cardName } data-testid="image-card" />
+        <img
+          src={ !props.cardImage ? DEFAULT_IMG : props.cardImage }
+          alt={ props.cardName }
+          data-testid="image-card"
+        />
         <p data-testid="description-card">{ props.cardDescription }</p>
         <div className="card-attributes">
           <p className="attribute-name">
