@@ -98,8 +98,7 @@ class App extends React.Component {
   render() {
     const { state, handleChange, handleSaveButtonClick, handleDeleteButtonClick } = this;
     return (
-      <div className="pink-background">
-        <h1>Tryunfo</h1>
+          <h1>(＾▽＾) Kawaii Trunfo (＾▽＾)</h1>
         <section className="new-card-section">
           <section className="add-card-section">
             <h1>Adicionar nova carta</h1>
