@@ -13,6 +13,7 @@ class Card extends React.Component {
           alt={ props.cardName }
           data-testid="image-card"
         />
+        {props.cardTrunfo && <h4 data-testid="trunfo-card">Super Trunfo</h4>}
         <p data-testid="description-card">{ props.cardDescription }</p>
         <div className="card-attributes">
           <p className="attribute-name">
