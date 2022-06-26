@@ -17,6 +17,9 @@ code {
     monospace;
 }
 
+.white-background {
+  background-color: white;
+}
 .pink-background {
   background-color: rgb(247, 241, 241);
 }

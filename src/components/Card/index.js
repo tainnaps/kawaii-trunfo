@@ -8,7 +8,7 @@ class Card extends React.Component {
   render() {
     const { props } = this;
     return (
-      <div className="card column">
+      <div className="card display-column white-background">
         <h3 data-testid="name-card">{ props.cardName }</h3>
         <img
           src={ !props.cardImage ? DEFAULT_IMG : props.cardImage }
