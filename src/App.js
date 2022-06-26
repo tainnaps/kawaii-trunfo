@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import './index.css';
 
 class App extends React.Component {
   constructor() {
@@ -97,37 +98,39 @@ class App extends React.Component {
   render() {
     const { state, handleChange, handleSaveButtonClick, handleDeleteButtonClick } = this;
     return (
-      <>
+      <div className="pink-background">
         <h1>Tryunfo</h1>
-        <section className="add-card-form">
-          <h1>Adicionar nova carta</h1>
-          <Form
-            cardName={ state.name }
-            cardDescription={ state.description }
-            cardAttr1={ state.attr1 }
-            cardAttr2={ state.attr2 }
-            cardAttr3={ state.attr3 }
-            cardImage={ state.image }
-            cardRare={ state.rarity }
-            cardTrunfo={ state.trunfo }
-            hasTrunfo={ state.hasTrunfo }
-            isSaveButtonDisabled={ state.isSaveButtonDisabled }
-            onInputChange={ handleChange }
-            onSaveButtonClick={ handleSaveButtonClick }
-          />
-        </section>
-        <section className="card-preview">
-          <h1>Pré-visualização</h1>
-          <Card
-            cardName={ state.name }
-            cardDescription={ state.description }
-            cardAttr1={ state.attr1 }
-            cardAttr2={ state.attr2 }
-            cardAttr3={ state.attr3 }
-            cardImage={ state.image }
-            cardRare={ state.rarity }
-            cardTrunfo={ state.trunfo }
-          />
+        <section className="new-card-section">
+          <section className="add-card-section">
+            <h1>Adicionar nova carta</h1>
+            <Form
+              cardName={ state.name }
+              cardDescription={ state.description }
+              cardAttr1={ state.attr1 }
+              cardAttr2={ state.attr2 }
+              cardAttr3={ state.attr3 }
+              cardImage={ state.image }
+              cardRare={ state.rarity }
+              cardTrunfo={ state.trunfo }
+              hasTrunfo={ state.hasTrunfo }
+              isSaveButtonDisabled={ state.isSaveButtonDisabled }
+              onInputChange={ handleChange }
+              onSaveButtonClick={ handleSaveButtonClick }
+            />
+          </section>
+          <section className="card-preview-section">
+            <h1>Pré-visualização</h1>
+            <Card
+              cardName={ state.name }
+              cardDescription={ state.description }
+              cardAttr1={ state.attr1 }
+              cardAttr2={ state.attr2 }
+              cardAttr3={ state.attr3 }
+              cardImage={ state.image }
+              cardRare={ state.rarity }
+              cardTrunfo={ state.trunfo }
+            />
+          </section>
         </section>
         {state.savedCards.length !== 0 && (
           <section>
@@ -154,7 +157,7 @@ class App extends React.Component {
               </div>
             ))}
           </section>)}
-      </>
+      </div>
     );
   }
 }
