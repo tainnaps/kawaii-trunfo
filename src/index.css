@@ -20,6 +20,14 @@ code {
 .white-background {
   background-color: white;
 }
+.display-row {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.page-header {
+  height: 13vh;
+}
 .pink-background {
   background-color: rgb(247, 241, 241);
 }
@@ -38,7 +46,7 @@ code {
   width: 50%;
 }
 
-.column {
+.display-column {
   display: flex;
   flex-direction: column;
 }
