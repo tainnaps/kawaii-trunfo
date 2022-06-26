@@ -1,0 +1,17 @@
+.add-new-card-form {
+  gap: 2vh;
+}
+
+.form-input-spacing {
+  width: 30%;
+  padding: 0.5vh 0.5%;
+}
+
+.add-new-card-form input, textarea {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.add-new-card-form label {
+  gap: 1vh;
+}

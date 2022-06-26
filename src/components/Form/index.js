@@ -1,14 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './index.css';
 
 class Form extends React.Component {
   render() {
     const { props } = this;
     return (
-      <form>
-        <label htmlFor="name">
+      <form className="add-new-card-form column">
+        <label
+          htmlFor="name"
+          className="column"
+        >
           Nome
           <input
+            className="form-input-spacing pink-background"
             id="name"
             name="name"
             type="text"
@@ -17,9 +22,13 @@ class Form extends React.Component {
             onChange={ props.onInputChange }
           />
         </label>
-        <label htmlFor="description">
+        <label
+          htmlFor="description"
+          className="column"
+        >
           Descrição
           <textarea
+            className="form-input-spacing pink-background"
             id="description"
             name="description"
             data-testid="description-input"
@@ -27,9 +36,13 @@ class Form extends React.Component {
             onChange={ props.onInputChange }
           />
         </label>
-        <label htmlFor="attr1">
+        <label
+          htmlFor="attr1"
+          className="column"
+        >
           1º atributo
           <input
+            className="form-input-spacing pink-background"
             id="attr1"
             name="attr1"
             type="number"
@@ -38,9 +51,13 @@ class Form extends React.Component {
             onChange={ props.onInputChange }
           />
         </label>
-        <label htmlFor="attr2">
+        <label
+          htmlFor="attr2"
+          className="column"
+        >
           2º atributo
           <input
+            className="form-input-spacing pink-background"
             id="attr2"
             name="attr2"
             type="number"
@@ -49,9 +66,13 @@ class Form extends React.Component {
             onChange={ props.onInputChange }
           />
         </label>
-        <label htmlFor="attr3">
+        <label
+          htmlFor="attr3"
+          className="column"
+        >
           3º atributo
           <input
+            className="form-input-spacing pink-background"
             id="attr3"
             name="attr3"
             type="number"
@@ -60,9 +81,13 @@ class Form extends React.Component {
             onChange={ props.onInputChange }
           />
         </label>
-        <label htmlFor="image">
+        <label
+          htmlFor="image"
+          className="column"
+        >
           Imagem
           <input
+            className="form-input-spacing pink-background"
             id="image"
             name="image"
             type="text"
@@ -71,9 +96,13 @@ class Form extends React.Component {
             onChange={ props.onInputChange }
           />
         </label>
-        <label htmlFor="rarity">
+        <label
+          htmlFor="rarity"
+          className="column"
+        >
           Raridade
           <select
+            className="form-input-spacing"
             id="rarity"
             name="rarity"
             data-testid="rare-input"
@@ -86,7 +115,9 @@ class Form extends React.Component {
           </select>
         </label>
         {props.hasTrunfo ? <p>Você já tem um Super Trunfo em seu baralho</p> : (
-          <label htmlFor="trunfo">
+          <label
+            htmlFor="trunfo"
+          >
             Super Trunfo
             <input
               id="trunfo"
