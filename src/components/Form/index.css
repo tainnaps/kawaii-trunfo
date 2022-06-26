@@ -16,3 +16,7 @@
 .add-new-card-form label {
   gap: 1vh;
 }
+
+button {
+  align-self: center;
+}
