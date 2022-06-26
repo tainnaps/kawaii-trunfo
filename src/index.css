@@ -39,3 +39,24 @@ code {
   display: flex;
   flex-direction: column;
 }
+
+button {
+  background-color: rgb(255, 128, 128);
+  border: 1.9px solid rgb(255, 128, 128);
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: medium;
+  opacity: 1;
+  padding: 0.8vh 4%;
+  width: 180px;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+button:hover:enabled {
+  background-color: white;
+  color: rgb(255, 128, 128);
+}
