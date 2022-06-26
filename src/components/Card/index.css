@@ -9,6 +9,7 @@
 }
 
 .card p {
+  text-align: center;
   width: 90%;
   word-wrap: break-word;
   text-align: center;
