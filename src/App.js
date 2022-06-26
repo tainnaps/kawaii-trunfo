@@ -98,9 +98,14 @@ class App extends React.Component {
   render() {
     const { state, handleChange, handleSaveButtonClick, handleDeleteButtonClick } = this;
     return (
+      <div>
+        <header className="page-header white-background display-row">
           <h1>(＾▽＾) Kawaii Trunfo (＾▽＾)</h1>
+        </header>
         <section className="new-card-section">
-          <section className="add-card-section">
+          <section
+            className="pink-background display-column add-card-section vertical-padding-5"
+          >
             <h1>Adicionar nova carta</h1>
             <Form
               cardName={ state.name }
@@ -117,7 +122,7 @@ class App extends React.Component {
               onSaveButtonClick={ handleSaveButtonClick }
             />
           </section>
-          <section className="card-preview-section">
+          <section className="display-column card-preview-section vertical-padding-5">
             <h1>Pré-visualização</h1>
             <Card
               cardName={ state.name }
@@ -132,29 +137,35 @@ class App extends React.Component {
           </section>
         </section>
         {state.savedCards.length !== 0 && (
-          <section>
+          <section className="saved-cards-section display-column vertical-padding-5">
             <h1>Cartas Salvas</h1>
-            {state.savedCards.map((savedCard) => (
-              <div key={ savedCard.name } id={ savedCard.name }>
-                <Card
-                  cardName={ savedCard.name }
-                  cardDescription={ savedCard.description }
-                  cardAttr1={ savedCard.attr1 }
-                  cardAttr2={ savedCard.attr2 }
-                  cardAttr3={ savedCard.attr3 }
-                  cardImage={ savedCard.image }
-                  cardRare={ savedCard.rarity }
-                  cardTrunfo={ savedCard.trunfo }
-                />
-                <button
-                  type="button"
-                  data-testid="delete-button"
-                  onClick={ handleDeleteButtonClick }
+            <section className="saved-cards">
+              {state.savedCards.map((savedCard) => (
+                <div
+                  key={ savedCard.name }
+                  id={ savedCard.name }
+                  className="display-column saved-card"
                 >
-                  Excluir
-                </button>
-              </div>
-            ))}
+                  <Card
+                    cardName={ savedCard.name }
+                    cardDescription={ savedCard.description }
+                    cardAttr1={ savedCard.attr1 }
+                    cardAttr2={ savedCard.attr2 }
+                    cardAttr3={ savedCard.attr3 }
+                    cardImage={ savedCard.image }
+                    cardRare={ savedCard.rarity }
+                    cardTrunfo={ savedCard.trunfo }
+                  />
+                  <button
+                    type="button"
+                    data-testid="delete-button"
+                    onClick={ handleDeleteButtonClick }
+                  >
+                    Excluir
+                  </button>
+                </div>
+              ))}
+            </section>
           </section>)}
       </div>
     );
