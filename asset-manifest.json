@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kawaii-trunfo/static/css/main.31a22ab2.chunk.css",
+    "main.css": "/kawaii-trunfo/static/css/main.d8f6a3d7.chunk.css",
     "main.js": "/kawaii-trunfo/static/js/main.d90e2f46.chunk.js",
     "main.js.map": "/kawaii-trunfo/static/js/main.d90e2f46.chunk.js.map",
     "runtime-main.js": "/kawaii-trunfo/static/js/runtime-main.8dac07ee.js",
@@ -8,13 +8,13 @@
     "static/js/2.c63755fe.chunk.js": "/kawaii-trunfo/static/js/2.c63755fe.chunk.js",
     "static/js/2.c63755fe.chunk.js.map": "/kawaii-trunfo/static/js/2.c63755fe.chunk.js.map",
     "index.html": "/kawaii-trunfo/index.html",
-    "static/css/main.31a22ab2.chunk.css.map": "/kawaii-trunfo/static/css/main.31a22ab2.chunk.css.map",
+    "static/css/main.d8f6a3d7.chunk.css.map": "/kawaii-trunfo/static/css/main.d8f6a3d7.chunk.css.map",
     "static/js/2.c63755fe.chunk.js.LICENSE.txt": "/kawaii-trunfo/static/js/2.c63755fe.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8dac07ee.js",
     "static/js/2.c63755fe.chunk.js",
-    "static/css/main.31a22ab2.chunk.css",
+    "static/css/main.d8f6a3d7.chunk.css",
     "static/js/main.d90e2f46.chunk.js"
   ]
 }
