@@ -6,14 +6,14 @@ class Form extends React.Component {
   render() {
     const { props } = this;
     return (
-      <form className="add-new-card-form column">
+      <form className="add-new-card-form display-column">
         <label
           htmlFor="name"
-          className="column"
+          className="display-column"
         >
           Nome
           <input
-            className="form-input-spacing pink-background"
+            className="form-input-spacing pink-background medium-font"
             id="name"
             name="name"
             type="text"
@@ -24,11 +24,11 @@ class Form extends React.Component {
         </label>
         <label
           htmlFor="description"
-          className="column"
+          className="display-column"
         >
           Descrição
           <textarea
-            className="form-input-spacing pink-background"
+            className="form-input-spacing pink-background medium-font"
             id="description"
             name="description"
             data-testid="description-input"
@@ -38,11 +38,11 @@ class Form extends React.Component {
         </label>
         <label
           htmlFor="attr1"
-          className="column"
+          className="display-column"
         >
           1º atributo
           <input
-            className="form-input-spacing pink-background"
+            className="form-input-spacing pink-background medium-font"
             id="attr1"
             name="attr1"
             type="number"
@@ -53,11 +53,11 @@ class Form extends React.Component {
         </label>
         <label
           htmlFor="attr2"
-          className="column"
+          className="display-column"
         >
           2º atributo
           <input
-            className="form-input-spacing pink-background"
+            className="form-input-spacing pink-background medium-font"
             id="attr2"
             name="attr2"
             type="number"
@@ -68,11 +68,11 @@ class Form extends React.Component {
         </label>
         <label
           htmlFor="attr3"
-          className="column"
+          className="display-column"
         >
           3º atributo
           <input
-            className="form-input-spacing pink-background"
+            className="form-input-spacing pink-background medium-font"
             id="attr3"
             name="attr3"
             type="number"
@@ -83,11 +83,11 @@ class Form extends React.Component {
         </label>
         <label
           htmlFor="image"
-          className="column"
+          className="display-column"
         >
           Imagem
           <input
-            className="form-input-spacing pink-background"
+            className="form-input-spacing pink-background medium-font"
             id="image"
             name="image"
             type="text"
@@ -98,11 +98,11 @@ class Form extends React.Component {
         </label>
         <label
           htmlFor="rarity"
-          className="column"
+          className="display-column"
         >
           Raridade
           <select
-            className="form-input-spacing"
+            className="form-input-spacing medium-font"
             id="rarity"
             name="rarity"
             data-testid="rare-input"
@@ -117,8 +117,8 @@ class Form extends React.Component {
         {props.hasTrunfo ? <p>Você já tem um Super Trunfo em seu baralho</p> : (
           <label
             htmlFor="trunfo"
+            className="trunfo-label"
           >
-            Super Trunfo
             <input
               id="trunfo"
               name="trunfo"
@@ -127,6 +127,7 @@ class Form extends React.Component {
               checked={ props.cardTrunfo }
               onChange={ props.onInputChange }
             />
+            Super Trunfo
           </label>)}
         <button
           type="submit"
